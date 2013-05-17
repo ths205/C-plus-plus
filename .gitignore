@@ -1,0 +1,71 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+/*program: brazilflag.cpp
+  author: Tiffany Schiff
+  date: 10/16/2010
+  synopsis: The purpose of thisnprogram is to generate a picture of the
+  brazil flag.
+*/
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+        const int width = 300;            //number of columns of pixels
+        const int height = width * 2 / 3; //number of rows of pixels
+
+        const int xmax = width / 2;       //place origin at center
+        const int ymax = height / 2;
+        const int xmin = xmax - width;
+        const int ymin = ymax - height;
+      
+
+        cout << "P3\n"                    //magic number of Netpbm .ppm file
+                << width << " " << height << "\n"
+                << 255 << "\n";           //maximum color value; 0 is minimum
+
+
+        for (int y = ymax - 1; y >= ymin; --y)
+         {              //top to bottom
+                for (int x = xmin; x < xmax; ++x)
+                 {
+                     if( x*x + y*y <= 60*60)
+                     {
+                       cout << 0 << "\t" << 0 << "\t" << 150 << "\n";
+                     }
+
+                     else if (abs(y) <= -abs(x) + height/2)
+                     {
+
+                      cout << 255 << "\t" << 255 << "\t" <<  0 << "\n";
+                     }
+
+                     else
+                     {
+                      cout << 0 << "\t" << 140 << "\t" << 0 << "\n";
+                     }
+
+                }
+
+
+        }
+
+      return EXIT_SUCCESS;
+
+}
+
