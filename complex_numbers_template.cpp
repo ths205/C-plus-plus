@@ -1,7 +1,7 @@
 //Tiffany Schiff
 //program:maincomplex
 //synopsis: Class complex performs arithmetic operation for imaginary numbers.
-//date: 6/25/2011
+
 #include<iostream>
 #include<cstdlib>
 
