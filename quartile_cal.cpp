@@ -1,4 +1,6 @@
 //Calculates the first,second and third Quartiles of an array
+//q1 stands for 25 percentile, q2, stands for 50  percentile
+// and q3 stands for 75 percentile
 
 #include <cmath>
 #include <cstdio>
@@ -69,7 +71,7 @@ int main() {
         cout<<q3<<"\n";
     }
    
-    //if the number of integers in an array is even and if the number of integers that make up half the array are odd
+    //if the number of integers in an array is even and if the number of integers that make up half the array are even
     else{
         int q2 =(x[(n/2)-1]+x[(n/2)])/2;
         int q1= (x[(n/4)-1]+x[(n/4)])/2;
